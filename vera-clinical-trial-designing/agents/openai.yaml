@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vera Clinical Trial Designing"
+  short_description: "Public sample-size and power calculator"
+  brand_color: "#2563EB"
+  default_prompt: "Use $vera-clinical-trial-designing to size a binary, continuous, or time-to-event clinical trial."
+policy:
+  allow_implicit_invocation: true

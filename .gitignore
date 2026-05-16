@@ -1,0 +1,13 @@
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+
+outputs/
+runs/
+**/outputs/
+**/runs/
+**/Rplots.pdf
+
+*.log
+*.tmp

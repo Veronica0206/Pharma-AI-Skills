@@ -1,0 +1,2 @@
+study_id,study,year,population,endpoint,endpoint_definition,timing,arm,arm_type,responders,total,count_status,source
+STUDY1,Example Study,2026,Target population,Response,Endpoint definition,Week 8,Placebo,placebo,10,50,exact,https://example.org/source

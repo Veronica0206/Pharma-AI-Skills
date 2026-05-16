@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vera Master Trial Designing"
+  short_description: "Public basket, umbrella, platform simulator"
+  brand_color: "#7C3AED"
+  default_prompt: "Use $vera-master-trial-designing to simulate a basket, umbrella, or platform trial design."
+policy:
+  allow_implicit_invocation: true

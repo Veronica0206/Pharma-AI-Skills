@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vera Clinical Meta-Analysis"
+  short_description: "Public clinical benchmark meta-analysis"
+  brand_color: "#B45309"
+  default_prompt: "Use $vera-clinical-meta-analysis to pool clinical endpoint rates and translate them into trial-design benchmarks."
+policy:
+  allow_implicit_invocation: true

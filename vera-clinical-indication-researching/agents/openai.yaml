@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vera Clinical Indication Researching"
+  short_description: "Public indication landscape dossiers"
+  brand_color: "#0F766E"
+  default_prompt: "Use $vera-clinical-indication-researching to create an indication dossier with MoA, compounds, endpoints, and study designs."
+policy:
+  allow_implicit_invocation: true

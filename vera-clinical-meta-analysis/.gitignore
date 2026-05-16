@@ -1,0 +1,7 @@
+outputs/
+runs/
+scripts/R/outputs/
+scripts/R/Rplots.pdf
+*.Rhistory
+.RData
+.DS_Store
