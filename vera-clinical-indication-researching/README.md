@@ -14,10 +14,16 @@ It is built for biostatisticians, clinical scientists, and drug-development prof
 
 ---
 
+## Executive relevance
+
+This skill is a public example of how indication research support can be made more repeatable across therapeutic areas. It standardizes the steps for scoping mechanisms, compounds, endpoints, and precedent study designs so teams can onboard into a new TA with clearer evidence structure and traceable source use. It is designed for human-in-the-loop AI assistance: the workflow can organize and draft the dossier, but endpoint interpretation, standard-of-care benchmark selection, competitive judgment, and development recommendations still require qualified expert review.
+
+---
+
 ## Who this is for
 
 - **Drug-development professionals** evaluating new indications or indication expansions
-- **Biostatisticians and clinical scientists** preparing for a [`vera-clinical-trial-designing`](https://github.com/veronica0206/vera-clinical-trial-designing) or [`vera-master-trial-designing`](https://github.com/veronica0206/vera-master-trial-designing) workflow
+- **Biostatisticians and clinical scientists** preparing for a [`vera-clinical-trial-designing`](../vera-clinical-trial-designing/) or [`vera-master-trial-designing`](../vera-master-trial-designing/) workflow
 - **Regulatory affairs and medical writing professionals** building briefing books that need defensible competitive-landscape sections
 - **Postdocs and PhD / MS holders** moving into biotech / pharma R&D who need a structured way to scope a new therapeutic area
 - **Consultants** producing indication memos or due-diligence reports
@@ -58,9 +64,10 @@ Indication name             Workflow                      Outputs
 ## Installation
 
 ```bash
-git clone https://github.com/veronica0206/vera-clinical-indication-researching.git ~/.claude/skills/vera-clinical-indication-researching
-
-git clone https://github.com/veronica0206/vera-clinical-indication-researching.git ~/.codex/skills/vera-clinical-indication-researching
+git clone https://github.com/Veronica0206/Pharma-AI-Skills.git
+mkdir -p ~/.codex/skills ~/.claude/skills
+rsync -a Pharma-AI-Skills/vera-clinical-indication-researching/ ~/.codex/skills/vera-clinical-indication-researching/
+rsync -a Pharma-AI-Skills/vera-clinical-indication-researching/ ~/.claude/skills/vera-clinical-indication-researching/
 ```
 
 **Requirements:**
@@ -84,8 +91,8 @@ See [`docs/guide.md`](docs/guide.md) for a getting-started walkthrough.
 
 ## Related skills
 
-- [`vera-clinical-trial-designing`](https://github.com/veronica0206/vera-clinical-trial-designing) — quantitative trial design (sample size, Go/No-Go, PPOS). Use *after* this dossier when you are ready to design.
-- [`vera-master-trial-designing`](https://github.com/veronica0206/vera-master-trial-designing) — basket, umbrella, and platform master-protocol designs.
+- [`vera-clinical-trial-designing`](../vera-clinical-trial-designing/) — quantitative trial design and sample-size workflows. Use *after* this dossier when you are ready to design.
+- [`vera-master-trial-designing`](../vera-master-trial-designing/) — basket, umbrella, and platform master-protocol designs.
 
 ---
 
@@ -99,4 +106,4 @@ GPL-3.0. See [`LICENSE`](LICENSE).
 
 If this skill informs published work, please cite as:
 
-> Veronica. *Clinical Indication Researching — comprehensive landscape dossier for drug development.* GitHub repository, https://github.com/veronica0206/vera-clinical-indication-researching
+> Veronica. *Clinical Indication Researching — comprehensive landscape dossier for drug development.* Skill folder in Pharma-AI-Skills, https://github.com/Veronica0206/Pharma-AI-Skills/tree/main/vera-clinical-indication-researching

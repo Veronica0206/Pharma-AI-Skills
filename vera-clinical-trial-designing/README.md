@@ -8,6 +8,12 @@ This is the **public release** of the skill. It implements the standard textbook
 
 ---
 
+## Executive relevance
+
+This skill is a public example of how recurring Statistics support for standard trial-sizing questions can be made repeatable across therapeutic areas. It turns common sample-size and power workflows into a documented, parameterized, auditable process that can support cross-TA onboarding and consistent first-pass design discussions. The workflow is intentionally human-in-the-loop: it can compute and document sizing scenarios, but endpoint choice, H0/H1 assumptions, estimand context, alpha/power rationale, and regulatory or clinical interpretation still require expert biostatistical judgment.
+
+---
+
 ## What this skill does
 
 | Endpoint | Single-arm | Controlled (1:1) |
@@ -56,11 +62,10 @@ See `SKILL.md` § *Beyond This Skill* for references on each.
 Clone into either a Claude Code or Codex skills directory:
 
 ```bash
-git clone https://github.com/Veronica0206/vera-clinical-trial-designing.git \
-  ~/.claude/skills/vera-clinical-trial-designing
-
-git clone https://github.com/Veronica0206/vera-clinical-trial-designing.git \
-  ~/.codex/skills/vera-clinical-trial-designing
+git clone https://github.com/Veronica0206/Pharma-AI-Skills.git
+mkdir -p ~/.codex/skills ~/.claude/skills
+rsync -a Pharma-AI-Skills/vera-clinical-trial-designing/ ~/.codex/skills/vera-clinical-trial-designing/
+rsync -a Pharma-AI-Skills/vera-clinical-trial-designing/ ~/.claude/skills/vera-clinical-trial-designing/
 ```
 
 Or invoke from a checked-out repository in any compatible agent environment.
@@ -108,8 +113,8 @@ For three full worked examples (binary, continuous, TTE), see [`scripts/R/exampl
 
 ## Related skills
 
-- [`vera-clinical-indication-researching`](https://github.com/Veronica0206/vera-clinical-indication-researching) — pre-design dossier on indication landscape, MoA, endpoints, competitor study designs.
-- [`vera-master-trial-designing`](https://github.com/Veronica0206/vera-master-trial-designing) — basket, umbrella, and platform master-protocol designs (also a scope-limited public release).
+- [`vera-clinical-indication-researching`](../vera-clinical-indication-researching/) — pre-design dossier on indication landscape, MoA, endpoints, and competitor study designs.
+- [`vera-master-trial-designing`](../vera-master-trial-designing/) — basket, umbrella, and platform master-protocol designs (also a scope-limited public release).
 
 ---
 
@@ -123,4 +128,4 @@ GPL-3.0. See [`LICENSE`](LICENSE).
 
 If this skill informs published work:
 
-> Veronica. *Clinical Trial Designing — sample size calculation skill (public release).* GitHub repository, https://github.com/Veronica0206/vera-clinical-trial-designing
+> Veronica. *Clinical Trial Designing — sample size calculation skill (public release).* Skill folder in Pharma-AI-Skills, https://github.com/Veronica0206/Pharma-AI-Skills/tree/main/vera-clinical-trial-designing
