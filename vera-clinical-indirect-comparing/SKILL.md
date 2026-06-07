@@ -17,11 +17,11 @@ comparator or a connected three-treatment evidence chain.
 
 ## Table of Contents
 
-- `Public Scope`: supported methods and exclusions.
-- `What Requires Judgment`: assumptions the analyst must review.
-- `Workflow`: step-by-step execution path.
-- `Running the Base R Framework`: Bucher, Bucher chain, and MAIC commands.
-- `Output Interpretation`: required reporting fields and caveats.
+- [Public Scope](#public-scope): supported methods and exclusions.
+- [What Requires Judgment](#what-requires-judgment): assumptions the analyst must review.
+- [Workflow](#workflow): step-by-step execution path.
+- [Running the Base R Framework](#running-the-base-r-framework): Bucher, Bucher chain, and MAIC commands.
+- [Output Interpretation](#output-interpretation): required reporting fields and caveats.
 
 ## Public Scope
 

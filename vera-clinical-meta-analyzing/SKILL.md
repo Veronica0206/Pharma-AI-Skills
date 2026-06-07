@@ -19,6 +19,17 @@ tool: the public release focuses on transparent endpoint extraction, endpoint
 harmonization, base R pooling helpers, simple plots, and a clean handoff to
 `vera-clinical-trial-designing`.
 
+## Table of Contents
+
+- [Host Runtime Notes](#host-runtime-notes)
+- [Public Scope](#public-scope)
+- [Endpoint Families](#endpoint-families)
+- [Workflow](#workflow)
+- [Data Contract](#data-contract)
+- [Running the Base R Framework](#running-the-base-r-framework)
+- [Output Interpretation](#output-interpretation)
+- [Resources](#resources)
+
 ## Host Runtime Notes
 
 - Works in Claude Code, Codex, and other file-aware coding agents.
