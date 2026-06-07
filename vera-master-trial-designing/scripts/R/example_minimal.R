@@ -4,12 +4,27 @@
 # Run from this directory: Rscript example_minimal.R
 ###############################################################################
 
-source("shared_utils.R")
-source("master_config.R")
-source("basket_simple.R")
-source("umbrella_mams.R")
-source("platform_simple.R")
-source("run_master_framework.R")
+resolve_script_dir <- function() {
+  frames <- sys.frames()
+  for (i in rev(seq_along(frames))) {
+    if (!is.null(frames[[i]]$ofile)) {
+      return(dirname(normalizePath(frames[[i]]$ofile)))
+    }
+  }
+  script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(script_arg) > 0) {
+    return(dirname(normalizePath(sub("^--file=", "", script_arg[1]))))
+  }
+  getwd()
+}
+script_dir <- resolve_script_dir()
+
+source(file.path(script_dir, "shared_utils.R"))
+source(file.path(script_dir, "master_config.R"))
+source(file.path(script_dir, "basket_simple.R"))
+source(file.path(script_dir, "umbrella_mams.R"))
+source(file.path(script_dir, "platform_simple.R"))
+source(file.path(script_dir, "run_master_framework.R"))
 
 out_root <- "outputs"
 dir.create(out_root, showWarnings = FALSE, recursive = TRUE)

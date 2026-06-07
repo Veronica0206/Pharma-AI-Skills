@@ -1,23 +1,25 @@
 ---
-name: vera-clinical-meta-analysis
+name: vera-clinical-meta-analyzing
 description: >-
   Public clinical meta-analysis workflow for drug-development benchmarks. Use to
-  extract responder/overall x/N data from clinical studies, harmonize endpoint
-  definitions and timing, pool single-arm placebo/control/treatment rates with a
-  base R logit random-effects method, summarize paired risk differences and risk
-  ratios when treatment-control counts are available, create simple forest plots,
-  and translate pooled benchmarks into trial-design assumptions. Triggers on:
-  clinical meta-analysis, pooled rate, literature benchmark, historical control,
-  placebo benchmark, active-control benchmark, forest plot, x/N extraction,
-  endpoint harmonization, benchmark for sample size, benchmark for power.
+  extract binary x/N, continuous mean/SD/N, time-to-event HR/CI, and
+  incidence-rate events/person-time data from clinical studies; harmonize
+  endpoint definitions and timing; pool single-arm placebo/control/treatment
+  benchmarks with base R helpers; summarize comparative effects; create simple
+  forest plots; and translate pooled benchmarks into trial-design assumptions.
+  Triggers on: clinical meta-analysis, pooled rate, literature benchmark,
+  historical control, placebo benchmark, active-control benchmark, forest plot,
+  x/N extraction, mean difference, hazard ratio, incidence rate, endpoint
+  harmonization, benchmark for sample size, benchmark for power.
 ---
 
 # Clinical Meta-Analysis Skill - Public Release
 
-This skill turns clinical literature counts into defensible benchmark rates for
-trial planning. It is deliberately narrower than a full systematic-review tool:
-the public release focuses on transparent x/N extraction, endpoint harmonization,
-base R pooling, simple plots, and a clean handoff to `vera-clinical-trial-designing`.
+This skill turns clinical endpoint data into defensible benchmark estimates
+for trial planning. It is deliberately narrower than a full systematic-review
+tool: the public release focuses on transparent endpoint extraction, endpoint
+harmonization, base R pooling helpers, simple plots, and a clean handoff to
+`vera-clinical-trial-designing`.
 
 ## Host Runtime Notes
 
@@ -33,8 +35,9 @@ base R pooling, simple plots, and a clean handoff to `vera-clinical-trial-design
 
 Use this skill for:
 
-- Extracting study-level responder/overall counts from papers, labels, clinical
-  trial registries, or regulatory reviews.
+- Extracting study-level binary x/N, continuous mean/SD/N, time-to-event
+  HR/CI, and incidence-rate events/person-time data from papers, labels,
+  clinical trial registries, or regulatory reviews.
 - Auditing whether endpoint definition, timing, population, and arm type are
   comparable enough to pool.
 - Pooling single-arm rates for placebo, standard of care, active control, or
@@ -42,6 +45,19 @@ Use this skill for:
 - Summarizing paired treatment-control effects when both rows exist for a study.
 - Creating base R forest plots and CSV outputs.
 - Translating pooled estimates into design-ready H0/control/target assumptions.
+
+## Endpoint Families
+
+Supported endpoint families are:
+
+| Family | Source data | Measures |
+|--------|-------------|----------|
+| `binary` | responders and total | pooled proportions, risk difference, risk ratio, odds ratio |
+| `continuous` | mean, SD, N | pooled means, mean difference, standardized mean difference |
+| `time_to_event` | HR with CI/SE or log HR with SE | hazard ratio |
+| `incidence_rate` | events and person-time | pooled rates, rate ratio |
+
+See `reference/specs/endpoint-families.md` for extraction rules and trial-design handoff mapping. The bundled end-to-end example remains intentionally small and demonstrates binary x/N pooling; `scripts/R/meta_endpoint_core.R` provides the endpoint-family transformations and inverse-variance pooling helpers for broader public examples.
 
 Do not use this public version for network meta-analysis, Bayesian
 meta-analysis, publication-bias modeling, automated PDF extraction, GRADE/Cochrane
@@ -61,7 +77,8 @@ Read each workflow file before executing that step.
 
 ## Data Contract
 
-Use `reference/templates/endpoint_counts_template.csv` as the starting shape.
+For the public binary x/N end-to-end framework, use
+`reference/templates/endpoint_counts_template.csv` as the starting shape.
 Required columns:
 
 - `study_id`
@@ -79,7 +96,9 @@ Required columns:
 - `source`
 
 Keep exact x/N counts. Reconstruct from percentages only when the denominator is
-explicit, and mark `count_status` as `reconstructed`.
+explicit, and mark `count_status` as `reconstructed`. For continuous,
+time-to-event, and incidence-rate endpoints, follow
+`reference/specs/endpoint-families.md`.
 
 ## Running the Base R Framework
 
@@ -132,3 +151,16 @@ Map outputs into `vera-clinical-trial-designing` as:
 - treatment pooled rate or target range -> `alt_param`
 - pooled treatment-control effect -> clinically meaningful delta
 - sensitivity range -> scenario grid for power/sample-size checks
+
+
+## Resources
+
+- `scripts/R/meta_analysis.R`: public binary x/N end-to-end pooling framework.
+- `scripts/R/meta_endpoint_core.R`: base-R helpers for binary, continuous, time-to-event, and incidence-rate endpoint transformations and inverse-variance pooling.
+- `scripts/R/validate_endpoint_families.R`: deterministic smoke test covering all supported endpoint families.
+- `reference/specs/endpoint-families.md`: required columns, measures, and trial-design handoff rules.
+- `reference/templates/meta-analysis-r-skeleton.R`: starter script for project-specific extraction tables.
+
+## Quality Checks
+
+Run `Rscript scripts/R/validate_endpoint_families.R` after changing endpoint logic, and `Rscript scripts/R/example_minimal.R` after changing the public x/N framework.

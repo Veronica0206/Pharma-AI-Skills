@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vera Clinical Indirect Comparison"
+  short_description: "Public Bucher, Bucher chain, and MAIC comparison workflow"
+  brand_color: "#0E7490"
+  default_prompt: "Use $vera-clinical-indirect-comparing to run binary/continuous Bucher common-comparator comparison, Bucher chain comparison from A vs C plus C vs B evidence, or MAIC."
+policy:
+  allow_implicit_invocation: true

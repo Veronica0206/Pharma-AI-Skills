@@ -1,6 +1,6 @@
 # Step 07: External Review (optional)
 
-> **Executor**: Main Agent (invokes `reference/sub-skills/research-reviewing.md`)
+> **Executor**: Main Agent (invokes `reference/prompts/research-reviewing.md`)
 > **Input**: Assembled dossier content from Step 06 (all tables, narrative, classifications)
 > **Output**: `AUTO_REVIEW.md` + `REVIEW_STATE.json` + corrected dossier
 
@@ -55,7 +55,7 @@ Check for `REVIEW_STATE.json` in the working directory:
 
 ### 7.3 Launch Review
 
-Read and follow `reference/sub-skills/research-reviewing.md`.
+Read and follow `reference/prompts/research-reviewing.md`.
 
 **Context to send** (the external model cannot read files — you must include everything):
 

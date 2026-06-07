@@ -8,31 +8,52 @@ Open-source agent skills for pharma and clinical-development workflows.
 
 This repository follows an umbrella structure: each skill lives in its own
 self-contained folder with its own `SKILL.md`, documentation, workflow files,
-reference material, and scripts. The four skills can be used independently, but
+reference material, and scripts. The five skills can be used independently, but
 they are designed to work naturally as a clinical-development sequence.
 
 ## Portfolio positioning
 
-This repository demonstrates how clinical-development and evidence-generation workflows can be decomposed into structured AI-assisted skills. The emphasis is not on replacing clinical, statistical, regulatory, or medical judgment; it is on making evidence collection, analysis setup, output generation, validation, and handoff points explicit enough for human review.
+This repository demonstrates how clinical-development and evidence-generation
+workflows can be decomposed into structured AI-assisted skills. The emphasis is
+not on replacing clinical, statistical, regulatory, or medical judgment; it is on
+making evidence collection, analysis setup, output generation, validation, and
+handoff points explicit enough for human review.
 
-For hiring reviewers, the repo is meant to show regulated-domain AI workflow design: clear input contracts, stepwise documentation, reproducible quantitative scripts where applicable, and visible boundaries between machine-assisted work and expert sign-off.
+For hiring reviewers, the repo is meant to show regulated-domain AI workflow
+design: clear input contracts, stepwise documentation, reproducible quantitative
+scripts where applicable, and visible boundaries between machine-assisted work
+and expert sign-off.
 
 ## Executive relevance
 
-This suite is designed as a public example of how Statistics-facing clinical-development support can be standardized across therapeutic areas without hiding the need for expert judgment. The skills make cross-TA onboarding easier by turning recurring tasks into repeatable workflows with explicit inputs, outputs, validation checks, and review points. They demonstrate human-in-the-loop AI assistance for evidence organization, benchmark construction, trial-design parameterization, and simulation support, while preserving auditability and traceability through documented workflow steps and source-aware outputs.
+This suite is designed as a public example of how Statistics-facing
+clinical-development support can be standardized across therapeutic areas
+without hiding the need for expert judgment. The skills make cross-TA onboarding
+easier by turning recurring tasks into repeatable workflows with explicit
+inputs, outputs, validation checks, and review points. They demonstrate
+human-in-the-loop AI assistance for evidence organization, benchmark
+construction, indirect-comparison sensitivity evidence, trial-design
+parameterization, and simulation support, while preserving auditability and
+traceability through documented workflow steps and source-aware outputs.
 
 ## Skill map
 
 | Skill | Clinical-development use case | Input | Output | Human review requirement | What it demonstrates |
 |---|---|---|---|---|---|
 | [`vera-clinical-indication-researching`](vera-clinical-indication-researching/) | Indication landscape, mechanism-of-action research, endpoint precedent, competitive intelligence, and study-design patterns. | Disease indication, optional focus compound, population/scope constraints, and source preferences. | Structured clinical indication dossier with MoA landscape, compound landscape, endpoint framework, and study-design synthesis. | Expert review of endpoint authority, standard-of-care benchmarks, competitive positioning, and development go/no-go interpretation. | Evidence organization, current-source research workflow, endpoint taxonomy, clinical strategy handoff, and review-aware dossier assembly. |
-| [`vera-clinical-meta-analysis`](vera-clinical-meta-analysis/) | Literature benchmark development for trial assumptions and historical/control rates. | Study-level x/N counts, endpoint definitions, timing, population, arm type, and source metadata. | Cleaned counts, definition audit, pooled rates, paired effects when available, design benchmarks, and forest plots. | Statistical review of extraction quality, endpoint comparability, heterogeneity, reconstructed counts, and benchmark suitability. | Transparent evidence synthesis, endpoint harmonization, base R reproducibility, benchmark handoff into design workflows. |
+| [`vera-clinical-meta-analyzing`](vera-clinical-meta-analyzing/) | Literature benchmark development for trial assumptions and historical/control benchmarks across binary, continuous, time-to-event, and incidence-rate endpoint families. | Study-level endpoint data, endpoint definitions, timing, population, arm type, and source metadata. | Cleaned counts or endpoint-family inputs, definition audit, pooled benchmarks, paired effects when available, design benchmarks, and forest plots. | Statistical review of extraction quality, endpoint comparability, heterogeneity, reconstructed values, and benchmark suitability. | Transparent evidence synthesis, endpoint harmonization, base R reproducibility, benchmark handoff into design workflows. |
+| [`vera-clinical-indirect-comparing`](vera-clinical-indirect-comparing/) | Simplified binary/continuous indirect treatment comparison when direct head-to-head evidence is absent. | Binary counts or continuous mean/SD/N summaries, direct-effect estimates, source IPD, and target aggregate covariate means. | Bucher common-comparator results, Bucher chain results, MAIC weights, ESS/balance diagnostics, and anchored MAIC estimates. | Clinical and statistical review of common-comparator similarity, effect modifiers, endpoint alignment, ESS loss, and interpretation limits. | Anchored evidence-synthesis workflow, binary/continuous public-scope R implementation, MAIC diagnostics, and sensitivity-evidence framing. |
 | [`vera-clinical-trial-designing`](vera-clinical-trial-designing/) | Standard sample-size and power calculations for single-arm or 1:1 controlled clinical trials. | Endpoint family, null and alternative parameters, design type, alpha/power grid, and endpoint-specific assumptions. | Sample-size table and power-curve PDF generated by R framework code. | Biostatistical review of endpoint choice, H0/H1 assumptions, estimand context, regulatory rationale, and final design interpretation. | Quantitative workflow execution, parameterized R analysis, output validation, and human-in-the-loop trial design support. |
 | [`vera-master-trial-designing`](vera-master-trial-designing/) | Basket, umbrella, and platform trial baseline simulations for master-protocol planning. | Master-protocol family, scenario grid, endpoint assumptions, simulation settings, and design-specific parameters. | Operating-characteristics CSV/PDF outputs including rejection rates, FWER, and power summaries where applicable. | Expert review of master-protocol family choice, borrowing assumptions, multiplicity, governance, and interpretation of operating characteristics. | Simulation-based design support, master-protocol taxonomy, scenario analysis, and regulated decision-support framing. |
 
 ## Responsible-use statement
 
-These skills support evidence organization, drafting, simulation, benchmark construction, and workflow structuring. They do not replace expert statistical, clinical, regulatory, medical, or legal judgment. Outputs should be treated as decision-support artifacts that require human review before use in protocol design, regulatory strategy, clinical evidence packages, or external communications.
+These skills support evidence organization, drafting, simulation, benchmark
+construction, indirect-comparison sensitivity analysis, and workflow structuring.
+They do not replace expert statistical, clinical, regulatory, medical, or legal
+judgment. Outputs should be treated as decision-support artifacts that require
+human review before use in protocol design, regulatory strategy, clinical
+evidence packages, or external communications.
 
 ## Hiring relevance
 
@@ -42,25 +63,28 @@ This repository demonstrates:
 - AI-assisted evidence synthesis with explicit data contracts and validation checkpoints
 - human-in-the-loop workflow design for high-stakes decision support
 - awareness of regulated-domain boundaries, source quality, and expert sign-off
-- clinical-development decision support spanning indication research, meta-analysis, trial sizing, and master-protocol simulation
+- clinical-development decision support spanning indication research, meta-analysis, indirect comparison, trial sizing, and master-protocol simulation
 
 ## Recommended Workflow
 
 1. Start with `vera-clinical-indication-researching` to define the disease
    landscape, target population, endpoints, and precedent study designs.
-2. Use `vera-clinical-meta-analysis` when published clinical data should be
+2. Use `vera-clinical-meta-analyzing` when published clinical data should be
    translated into historical-control, placebo, active-control, or target-effect
    benchmarks.
-3. Use `vera-clinical-trial-designing` for a conventional first-pass protocol
+3. Use `vera-clinical-indirect-comparing` when head-to-head evidence is absent
+   and Bucher's method or MAIC can support an anchored binary/continuous indirect
+   comparison.
+4. Use `vera-clinical-trial-designing` for a conventional first-pass protocol
    sample size or power calculation.
-4. Use `vera-master-trial-designing` when the question becomes a basket,
+5. Use `vera-master-trial-designing` when the question becomes a basket,
    umbrella, or platform-trial concept.
 
 ## Host Compatibility
 
 The simplified public skills are written for Claude Code, Codex, and other
-file-aware coding agents. They avoid host-specific frontmatter and keep
-runtime notes inside each `SKILL.md`.
+file-aware coding agents. They avoid host-specific frontmatter and keep runtime
+notes inside each `SKILL.md`.
 
 Codex users can use the bundled `agents/openai.yaml` files for display metadata.
 Claude Code users can use the same `SKILL.md` workflow instructions directly.
@@ -89,7 +113,7 @@ mkdir -p ~/.claude/skills
 rsync -a vera-clinical-trial-designing/ ~/.claude/skills/vera-clinical-trial-designing/
 ```
 
-Install all four skills for Codex:
+Install all five skills for Codex:
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -98,7 +122,7 @@ for skill in vera-*; do
 done
 ```
 
-Install all four skills for Claude Code:
+Install all five skills for Claude Code:
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -110,7 +134,8 @@ done
 ## Requirements
 
 - R >= 4.0 for the quantitative skills.
-- Base R is sufficient for the public trial-design and meta-analysis examples.
+- Base R is sufficient for the public trial-design, meta-analysis, and indirect
+  comparison examples.
 - The `MAMS` R package is optional for the master-protocol umbrella workflow.
 - Current web search or browsing is useful for indication research and literature
   benchmarking.
@@ -120,9 +145,10 @@ Each skill folder includes its own setup guide and quick-start examples.
 ## Scope
 
 These skills are public, simplified reference workflows. They are intended for
-transparent first-pass research, benchmarking, and design support. They do not
-replace regulatory review, clinical judgment, statistical sign-off, medical
-monitoring, or formal systematic-review governance.
+transparent first-pass research, benchmarking, indirect-comparison sensitivity
+analysis, and design support. They do not replace regulatory review, clinical
+judgment, statistical sign-off, medical monitoring, or formal systematic-review
+governance.
 
 ## Repository Layout
 
@@ -131,7 +157,8 @@ Pharma-AI-Skills/
 ├── README.md
 ├── LICENSE
 ├── vera-clinical-indication-researching/
-├── vera-clinical-meta-analysis/
+├── vera-clinical-meta-analyzing/
+├── vera-clinical-indirect-comparing/
 ├── vera-clinical-trial-designing/
 └── vera-master-trial-designing/
 ```

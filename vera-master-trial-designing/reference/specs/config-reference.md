@@ -103,5 +103,5 @@ cfg <- create_master_config(
 
 ## See Also
 
-- `docs/decision-roadmap.md` — choosing between basket / umbrella / platform
+- `reference/specs/decision-roadmap.md` — choosing between basket / umbrella / platform
 - `SKILL.md` § *Beyond This Skill* — references for methods not implemented in the public release

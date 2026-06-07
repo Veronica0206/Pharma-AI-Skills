@@ -1,0 +1,5 @@
+comparison_id,treatment,comparator,endpoint_type,effect_measure,treatment_events,treatment_total,comparator_events,comparator_total,treatment_mean,treatment_sd,treatment_n,comparator_mean,comparator_sd,comparator_n,source
+binary_ab,Drug A,Placebo,binary,log_odds_ratio,45,100,30,100,,,,,,Example binary Trial AB
+binary_cb,Drug C,Placebo,binary,log_odds_ratio,38,100,30,100,,,,,,Example binary Trial CB
+continuous_ab,Drug A,Placebo,continuous,mean_difference,,,,,12.1,4.2,80,9.3,4.5,78,Example continuous Trial AB
+continuous_cb,Drug C,Placebo,continuous,mean_difference,,,,,10.2,4.1,82,9.3,4.5,78,Example continuous Trial CB

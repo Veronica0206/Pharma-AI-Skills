@@ -1,0 +1,4 @@
+covariate,target_mean
+age,62
+prior_tx,0.45
+baseline_score,7.4

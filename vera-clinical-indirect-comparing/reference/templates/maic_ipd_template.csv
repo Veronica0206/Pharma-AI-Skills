@@ -1,0 +1,5 @@
+patient_id,arm,response,change_score,age,prior_tx,baseline_score
+P001,Drug A,1,4.2,61,1,7.1
+P002,Drug A,0,1.1,52,0,5.8
+P003,Placebo,0,0.2,59,1,6.5
+P004,Placebo,1,2.4,55,0,5.9

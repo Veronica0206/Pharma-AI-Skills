@@ -22,7 +22,7 @@ within that family.
 | Multiple interventions, one protocol population? | **Umbrella** |
 | Arms enter / leave over time, perpetual protocol? | **Platform** |
 
-Read `docs/decision-roadmap.md` for the full decision logic.
+Read `reference/specs/decision-roadmap.md` for the full decision logic.
 
 ### 2. Public-Scope Method
 

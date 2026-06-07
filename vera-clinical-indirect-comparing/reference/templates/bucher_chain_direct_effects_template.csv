@@ -1,0 +1,3 @@
+comparison_id,treatment,comparator,effect_measure,analysis_scale,estimate,se,source
+trial_ac,Drug A,Drug C,mean_difference,mean_difference,2.8000,0.6200,Example continuous Trial AC
+trial_cb,Drug C,Drug B,mean_difference,mean_difference,1.1000,0.5400,Example continuous Trial CB

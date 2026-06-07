@@ -3,7 +3,22 @@
 # Synthetic smoke test for the public clinical meta-analysis skill.
 ###############################################################################
 
-source("meta_analysis.R")
+resolve_script_dir <- function() {
+  frames <- sys.frames()
+  for (i in rev(seq_along(frames))) {
+    if (!is.null(frames[[i]]$ofile)) {
+      return(dirname(normalizePath(frames[[i]]$ofile)))
+    }
+  }
+  script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(script_arg) > 0) {
+    return(dirname(normalizePath(sub("^--file=", "", script_arg[1]))))
+  }
+  getwd()
+}
+script_dir <- resolve_script_dir()
+
+source(file.path(script_dir, "meta_analysis.R"))
 
 out_dir <- file.path("outputs", "example")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)

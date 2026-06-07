@@ -4,9 +4,24 @@
 # Run from this directory: Rscript example_minimal.R
 ###############################################################################
 
-source("config.R")
-source("sample_size.R")
-source("run_framework.R")
+resolve_script_dir <- function() {
+  frames <- sys.frames()
+  for (i in rev(seq_along(frames))) {
+    if (!is.null(frames[[i]]$ofile)) {
+      return(dirname(normalizePath(frames[[i]]$ofile)))
+    }
+  }
+  script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(script_arg) > 0) {
+    return(dirname(normalizePath(sub("^--file=", "", script_arg[1]))))
+  }
+  getwd()
+}
+script_dir <- resolve_script_dir()
+
+source(file.path(script_dir, "config.R"))
+source(file.path(script_dir, "sample_size.R"))
+source(file.path(script_dir, "run_framework.R"))
 
 out_dir <- "outputs"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)

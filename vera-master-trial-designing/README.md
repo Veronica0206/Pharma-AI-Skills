@@ -107,7 +107,7 @@ For one full worked example per family, see [`scripts/R/example_minimal.R`](scri
 ## Documentation
 
 - [`SKILL.md`](SKILL.md) — full skill specification (methods, workflow, scope)
-- [`docs/decision-roadmap.md`](docs/decision-roadmap.md) — basket vs. umbrella vs. platform decision logic
+- [`reference/specs/decision-roadmap.md`](reference/specs/decision-roadmap.md) — basket vs. umbrella vs. platform decision logic
 - [`docs/guide.md`](docs/guide.md) — design notes for the public release
 - [`docs/setup.md`](docs/setup.md) — installation and verification
 - [`docs/changelog.md`](docs/changelog.md) — version history

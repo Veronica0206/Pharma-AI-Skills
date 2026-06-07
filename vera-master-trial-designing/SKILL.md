@@ -121,7 +121,7 @@ in any family. See "[Beyond This Skill](#beyond-this-skill)" for pointers.
 User request
     |
     v
-[STEP 1]  Select design type -> docs/decision-roadmap.md
+[STEP 1]  Select design type -> reference/specs/decision-roadmap.md
     |
     v
 [STEP 2]  Build master config -> create_master_config()
@@ -166,7 +166,7 @@ Ask the user one question: **"Is the trial about one drug across several
 subgroups (basket), several drugs in one disease (umbrella), or a perpetual
 protocol with arms entering and leaving (platform)?"**
 
-If the user is unsure, see `docs/decision-roadmap.md`.
+If the user is unsure, see `reference/specs/decision-roadmap.md`.
 
 If the answer maps to an out-of-scope feature (e.g., "I want to use BHM with
 information borrowing"), redirect them to "[Beyond This Skill](#beyond-this-skill)"
