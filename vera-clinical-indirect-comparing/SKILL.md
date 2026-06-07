@@ -9,7 +9,7 @@ description: >-
   comparison requests.
 ---
 
-# Clinical Indirect Comparison Skill - Public Release
+# Clinical Indirect Comparison Skill
 
 Use this skill when a direct head-to-head estimate is unavailable and the user
 needs a transparent first-pass indirect comparison using an anchored common

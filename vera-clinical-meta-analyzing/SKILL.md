@@ -11,7 +11,7 @@ description: >-
   or benchmark-for-power requests.
 ---
 
-# Clinical Meta-Analysis Skill - Public Release
+# Clinical Meta-Analysis Skill
 
 This skill turns clinical endpoint data into defensible benchmark estimates
 for trial planning. It is deliberately narrower than a full systematic-review

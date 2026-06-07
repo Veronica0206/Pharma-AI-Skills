@@ -11,7 +11,7 @@ description: >-
   platform design requests.
 ---
 
-# Master Protocol Trial Design Skill — Public Release
+# Master Protocol Trial Design Skill
 
 A biostatistician's toolkit for designing and simulating master protocol
 clinical trials. This is the **public release**; it implements one canonical

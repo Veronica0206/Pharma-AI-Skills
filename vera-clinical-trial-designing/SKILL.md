@@ -10,7 +10,7 @@ description: >-
   log-rank, two-proportion, t-test sizing, or trial-sizing requests.
 ---
 
-# Clinical Trial Designing Skill — Sample Size Calculation
+# Clinical Trial Design Skill
 
 A focused sample size calculator for biostatisticians designing clinical trials
 with binary, continuous, or time-to-event primary endpoints. Supports single-arm
