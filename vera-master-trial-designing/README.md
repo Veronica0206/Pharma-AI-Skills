@@ -1,4 +1,4 @@
-# Master Protocol Trial Designing — Public Release
+# Master Protocol Trial Design
 
 **An open-source agent skill for Claude Code, Codex, and other file-aware coding agents. It simulates the three master-protocol families — basket, umbrella, and platform — with one canonical method per family.**
 

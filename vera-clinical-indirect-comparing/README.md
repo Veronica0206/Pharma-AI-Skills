@@ -1,4 +1,4 @@
-# Clinical Indirect Comparison - Public Release
+# Clinical Indirect Comparison
 
 **An open-source agent skill for Claude Code, Codex, and other file-aware coding
 agents. It runs transparent first-pass binary and continuous indirect treatment

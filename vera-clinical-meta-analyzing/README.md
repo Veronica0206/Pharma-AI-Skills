@@ -1,4 +1,4 @@
-# Clinical Meta-Analysis - Public Release
+# Clinical Meta-Analysis
 
 **An open-source agent skill for Claude Code, Codex, and other file-aware coding agents. It converts clinical endpoint data into design-ready literature benchmarks.**
 
