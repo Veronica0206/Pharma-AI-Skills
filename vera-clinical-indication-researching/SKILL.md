@@ -1,12 +1,13 @@
 ---
 name: vera-clinical-indication-researching
 description: >-
-  Comprehensive clinical indication research for drug development and trial planning. Given a disease
-  indication, systematically researches mechanistic pathways and targets (MoA landscape), approved and
-  pipeline compounds with efficacy and safety data, primary and key secondary endpoints (FDA/EMA-guided
-  or field-consensus), and study designs of existing compounds. Outputs a structured Word or PDF dossier.
-  Triggers on: indication research, indication landscape, disease landscape, clinical landscape,
-  compound landscape, MoA landscape, endpoints for indication, clinical dossier.
+  Performs comprehensive clinical indication research for drug-development and
+  trial-planning dossiers. Given a disease indication, it researches mechanism
+  landscape, approved and pipeline compounds, endpoint authority, study-design
+  precedents, and SoC benchmarks, then assembles a cited dossier with optional
+  structured review. Activates for indication research, indication landscape,
+  disease landscape, clinical landscape, compound landscape, MoA landscape,
+  endpoints for indication, or clinical dossier requests.
 ---
 
 # Clinical Indication Research Skill
@@ -28,7 +29,7 @@ This skill handles the **systematic research and assembly engine** for clinical 
 - Endpoint classification into authority tiers (HA-Guided, Community Consensus, Literature Emerging)
 - Study design pattern extraction from existing trials
 - Structured dossier assembly with cross-referenced tables and narratives
-- Optional external adversarial review (via reviewer-LLM MCP if configured; structured self-review otherwise)
+- Optional external adversarial review (via delegated reviewer if configured; structured self-review otherwise)
 
 **What this skill does NOT automate — and where the biostatistician's judgment remains essential:**
 
@@ -48,7 +49,7 @@ The machine part is done. The judgment part is yours.
   registries, guidance, and peer-reviewed publications.
 - Optional document-rendering tools can create `.docx` or `.pdf`; if unavailable,
   deliver Markdown.
-- Optional reviewer-LLM MCP review in Step 07 can be used when configured;
+- Optional delegated review in Step 07 can be used when configured;
   otherwise perform the structured self-review fallback.
 
 ## Table of Contents
@@ -93,7 +94,7 @@ Step 5:  Study Design Analysis       -> Design patterns from existing trials
     |
 Step 6:  Synthesis and Assembly      -> Structured Word/PDF dossier
     |
-Step 7: External Review (optional)  -> Factual/classification quality check
+Step 7: Structured Review  -> Factual/classification quality check
     |
 Step 8:  Deliver                     -> Final file + executive summary
 ```
@@ -107,13 +108,13 @@ Read each step file in workflow/ before executing that step.
 | Step | Responsibility | Executor | Document | Input | Output |
 |------|----------------|----------|----------|-------|--------|
 | 01 | Clarify indication scope | Main Agent | `workflow/step01-clarify-inputs.md` | User request | Confirmed params |
-| 02 | MoA landscape research | Main Agent | `workflow/step02-moa-research.md` | Indication | MoA table + narrative |
-| 03 | Compound landscape | Main Agent | `workflow/step03-compound-landscape.md` | MoA classes | Compound tables |
-| 04 | Endpoint framework | Main Agent | `workflow/step04-endpoint-framework.md` | Compound list | Endpoint tables |
-| 05 | Study design analysis | Main Agent | `workflow/step05-study-designs.md` | Endpoint framework | Design table |
-| 06 | Synthesis and assembly | Main Agent | `workflow/step06-synthesis.md` | All sections | Final .docx, .pdf, or .md (per Step 01 1.2b early delivery check; markdown is the fallback if neither docx nor pdf skill is available) |
-| 07 | External review (optional, see step file) | Main Agent | `workflow/step07-review.md` | Assembled dossier | Reviewed + corrected dossier |
-| 08 | Deliver results | Main Agent | `workflow/step08-deliver.md` | Final dossier | Saved file (.docx, .pdf, or .md) + executive summary |
+| 02 | MoA landscape research | Main Agent | `workflow/step02-research-moa.md` | Indication | MoA table + narrative |
+| 03 | Compound landscape | Main Agent | `workflow/step03-map-compounds.md` | MoA classes | Compound tables |
+| 04 | Endpoint framework | Main Agent | `workflow/step04-build-endpoints.md` | Compound list | Endpoint tables |
+| 05 | Study design analysis | Main Agent | `workflow/step05-analyze-designs.md` | Endpoint framework | Design table |
+| 06 | Synthesis and assembly | Main Agent | `workflow/step06-synthesize-dossier.md` | All sections | Final .docx, .pdf, or .md (per Step 01 1.2b early delivery check; markdown is the fallback if neither docx nor pdf skill is available) |
+| 07 | Structured review | Main Agent | `workflow/step07-review-dossier.md` | Assembled dossier | Reviewed + corrected dossier |
+| 08 | Deliver results | Main Agent | `workflow/step08-deliver-results.md` | Final dossier | Saved file (.docx, .pdf, or .md) + executive summary |
 
 ---
 
@@ -132,7 +133,7 @@ If the user gives only the indication and says go, use defaults and proceed.
 
 ### STEP 2: MoA Landscape Research
 
-Read workflow/step02-moa-research.md before executing this step.
+Read workflow/step02-research-moa.md before executing this step.
 
 Goal: Identify all mechanistic classes being investigated for this indication.
 Use reference/specs/search-strategies.md Section 2 queries.
@@ -143,7 +144,7 @@ Announce: "Researching MoA landscape for [indication]..."
 
 ### STEP 3: Compound Landscape Research
 
-Read workflow/step03-compound-landscape.md before executing this step.
+Read workflow/step03-map-compounds.md before executing this step.
 
 Goal: Catalog approved and investigational compounds with efficacy/safety profiles and SoC benchmarks.
 Use reference/specs/search-strategies.md Section 3 queries.
@@ -157,7 +158,7 @@ Announce: "Researching compound landscape for [indication]..."
 
 ### STEP 4: Endpoint Framework Research
 
-Read workflow/step04-endpoint-framework.md before executing this step.
+Read workflow/step04-build-endpoints.md before executing this step.
 
 Goal: Establish endpoint classification (HA-Guided, Community Consensus, or Literature Emerging).
 Use reference/specs/endpoint-authority-sources.md for authority source directory and definitions.
@@ -169,7 +170,7 @@ Announce: "Researching endpoint framework for [indication]..."
 
 ### STEP 5: Study Design Analysis
 
-Read workflow/step05-study-designs.md before executing this step.
+Read workflow/step05-analyze-designs.md before executing this step.
 
 Goal: Characterize trial design patterns, statistical norms, and adaptive design landscape.
 Use reference/specs/search-strategies.md Section 5 queries.
@@ -211,12 +212,12 @@ that formatted export requires the docx or pdf skill.
 
 ---
 
-### STEP 7: External Review (optional)
+### STEP 7: Structured Review
 
-Read workflow/step07-review.md before executing this step.
+Read workflow/step07-review-dossier.md before executing this step.
 
 Goal: Cross-check dossier factual accuracy, endpoint classifications, and SoC
-benchmarks using an independent reviewer LLM. If a reviewer-LLM MCP server is
+benchmarks using a delegated reviewer. If a delegated reviewer is
 available in the host environment, use it; otherwise fall back to a structured
 self-review using the same evaluation dimensions.
 
@@ -227,13 +228,13 @@ self-review using the same evaluation dimensions.
 - Outputs: `AUTO_REVIEW.md` (cumulative log) + `REVIEW_STATE.json` (state persistence)
 
 **Skip this step** if the user requests quick output. The fallback self-review path is the default
-when no reviewer-LLM MCP is configured.
+when no delegated reviewer is configured.
 
-Announce: "Running external review of dossier for [indication]..."
+Announce: "Running delegated review of dossier for [indication]..."
 
 ---
 
-### STEP 7: Deliver
+### STEP 8: Deliver
 
 1. Save the final file to the working directory (or user-specified path)
 2. Provide 5-bullet executive summary:
@@ -286,7 +287,7 @@ efficacy number with specific trial name and year.
 | Include executive summary | yes, no | yes |
 | Endpoint classification | full, primary-only | full |
 | Include failed trials | yes, no | yes |
-| External review (reviewer-LLM MCP, optional) | yes, no, self-only | yes |
+| delegated review (delegated reviewer, optional) | yes, no, self-only | yes |
 
 ---
 
@@ -304,13 +305,13 @@ search FDA Advisory Committee transcripts; reference KDIGO or disease-specific w
 Compound data unavailable: note "data not publicly available" — do not fabricate; use ClinicalTrials.gov
 registration data as minimum floor.
 
-Reviewer-LLM MCP unavailable: fall back to structured self-review using the same 5 evaluation dimensions
-(see workflow/step07-review.md § 7.6). Document self-review in AUTO_REVIEW.md.
+Delegated reviewer unavailable: fall back to structured self-review using the same 5 evaluation dimensions
+(see workflow/step07-review-dossier.md). Document self-review in AUTO_REVIEW.md.
 
 ---
 
 ## Quick Start
 
 User: "[indication] indication research" / "comprehensive research on [indication]" / "disease landscape for [indication]"
-Skill: clarify scope -> MoA landscape -> compound landscape -> endpoint framework -> study designs -> synthesis -> external review -> deliver
-Total time: approximately 15-25 minutes (deep mode, without external review); 20-35 minutes (with external reviewer-LLM via MCP).
+Skill: clarify scope -> MoA landscape -> compound landscape -> endpoint framework -> study designs -> synthesis -> delegated review -> deliver
+Total time: approximately 15-25 minutes (deep mode, without delegated review); 20-35 minutes (with delegated reviewer-LLM via MCP).

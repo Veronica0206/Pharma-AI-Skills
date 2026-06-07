@@ -8,7 +8,7 @@ Conducts comprehensive clinical indication research for drug development plannin
 3. **Endpoint framework** — primary/secondary/biomarker endpoints with regulatory authority classification
 4. **Study design landscape** — single-arm vs. controlled precedent, statistical norms
 5. **Synthesis** — strategic recommendations connecting all four research domains
-6. **External review** — reviewer-LLM MCP quality loop or structured self-review (optional)
+6. **delegated review** — delegated reviewer quality loop or structured self-review (optional)
 
 Output: a publication-quality dossier (`.docx`, `.pdf`, or `.md`) with full citations.
 
@@ -19,16 +19,16 @@ Output: a publication-quality dossier (`.docx`, `.pdf`, or `.md`) with full cita
 The skill will:
 1. Confirm scope (default depth, focus compound, output format)
 2. Run all 6 research steps with validation checkpoints
-3. (Optional) Run external review until convergence (max 2 rounds)
+3. (Optional) Run delegated review until convergence (max 2 rounds)
 4. Assemble and deliver the dossier
 
 ## Common Invocations
 
 | User Request | Behavior |
 |---|---|
-| "Quick overview of Example Renal Indication B" | Standard depth (3-5 searches per section), markdown output |
-| "Deep dossier on Example Immune-Mediated Indication with focus on [example drug class]" | Deep depth (6-10 searches per section), focus compound MoA deep-dive |
-| "What endpoints does FDA accept for Example Renal Indication C?" | Step 04 only — endpoint framework with HA-Guided/Community Consensus/Literature Emerging classification |
+| "Quick overview of Example Indication B" | Standard depth (3-5 searches per section), markdown output |
+| "Deep dossier on Example Indication A with focus on [example drug class]" | Deep depth (6-10 searches per section), focus compound MoA deep-dive |
+| "What endpoints does FDA accept for Example Indication C?" | Step 04 only — endpoint framework with HA-Guided/Community Consensus/Literature Emerging classification |
 | "Compare Phase 3 [example abbreviation] designs across approved sponsors" | Step 05 only — regulatory precedent table |
 
 ## Output Structure
@@ -54,12 +54,12 @@ Three tiers with explicit criteria — see `reference/specs/endpoint-authority-s
 Four-tier priority rule in step03 ensures the same SoC benchmark value is used in both single-arm H0 and H2H control arm assumptions — preventing a common dossier error.
 
 ### External Review (Step 07)
-Optional reviewer-LLM MCP review with state persistence. Termination criteria:
+Optional delegated review with state persistence. Termination criteria:
 - Score ≥ 7/10, OR
 - Verdict contains "ready" or "almost"
 - OR max 2 rounds reached
 
-If no reviewer-LLM MCP is available, falls back to self-review.
+If no delegated reviewer is available, falls back to self-review.
 
 ## Integration with Other Skills
 
@@ -74,5 +74,5 @@ Domain `clinical` is a custom domain (not in the official `dev/doc/content/data/
 ## Limitations
 
 - **Therapeutic area coverage**: `endpoint-authority-sources.md` currently has the strongest coverage for renal and immune-mediated example areas. Other indications follow the same classification system but may need extending the reference file (see "Extending This Reference" section in that file).
-- **No automated fact-checking**: External review (step07) is the safety net but is optional.
+- **No automated fact-checking**: delegated review (step07) is the safety net but is optional.
 - **Output format depends on document/PDF tooling**: Verified upfront in step01 — falls back to markdown if formatted export is unavailable.

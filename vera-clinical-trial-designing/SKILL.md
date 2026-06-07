@@ -1,17 +1,13 @@
 ---
 name: vera-clinical-trial-designing
 description: >-
-  Sample size calculation for clinical trials with binary, continuous, or
-  time-to-event endpoints. Supports single-arm and 1:1 controlled designs.
-  Methods: exact binomial (single-arm binary), Z-test unpooled (two-arm binary),
-  one-sample and two-sample t-tests (continuous), exponential rate (single-arm TTE),
-  Schoenfeld log-rank (two-arm TTE). Generates a sample size table (CSV) and a
-  power curve plot (PDF) across a user-specified alpha and power grid. Executes
-  R framework code directly. Alpha convention: one-sided.
-  Use when user asks about sample size, power calculation, Schoenfeld log-rank,
-  exact binomial, two-proportion Z-test, or wants to size a clinical trial.
-  Triggers on: sample size, power calculation, sample size calculation, Schoenfeld,
-  log-rank, two-proportion test, t-test sizing, trial sizing.
+  Calculates clinical-trial sample sizes for binary, continuous, and
+  time-to-event endpoints across single-arm and 1:1 controlled designs. Supports
+  exact binomial, unpooled two-proportion Z-test, one- and two-sample t-tests,
+  exponential-rate single-arm TTE, and Schoenfeld log-rank methods; generates
+  CSV sample-size tables and PDF power curves through the bundled base R
+  framework. Activates for sample size, power calculation, Schoenfeld,
+  log-rank, two-proportion, t-test sizing, or trial-sizing requests.
 ---
 
 # Clinical Trial Designing Skill — Sample Size Calculation
@@ -118,13 +114,13 @@ Step 4: Validate outputs (CSV table + PDF curve)
 Step 5: Deliver results with interpretation
 ```
 
-| Step | Document | Input | Output |
-|------|----------|-------|--------|
-| 01 | `workflow/step01-collect-params.md` | User request | Validated params |
-| 02 | `workflow/step02-build-config.md` | Params | R config |
-| 03 | `workflow/step03-run-framework.md` | R config | CSV + PDF outputs |
-| 04 | `workflow/step04-validate-outputs.md` | Output files | Validated artifacts |
-| 05 | `workflow/step05-deliver-results.md` | Validated artifacts | Table + plot + interpretation |
+| Step | Responsibility | Executor | Document | Input | Output |
+|------|----------------|----------|----------|-------|--------|
+| 01 | Collect parameters | Main Agent | `workflow/step01-collect-params.md` | User request | Validated params |
+| 02 | Build R config | Main Agent | `workflow/step02-build-config.md` | Params | R config |
+| 03 | Run R framework | Main Agent | `workflow/step03-run-framework.md` | R config | CSV + PDF outputs |
+| 04 | Validate outputs | Main Agent | `workflow/step04-validate-outputs.md` | Output files | Validated artifacts |
+| 05 | Deliver results | Main Agent | `workflow/step05-deliver-results.md` | Validated artifacts | Table + plot + interpretation |
 
 ---
 

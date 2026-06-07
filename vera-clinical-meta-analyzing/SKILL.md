@@ -1,16 +1,14 @@
 ---
 name: vera-clinical-meta-analyzing
 description: >-
-  Public clinical meta-analysis workflow for drug-development benchmarks. Use to
-  extract binary x/N, continuous mean/SD/N, time-to-event HR/CI, and
-  incidence-rate events/person-time data from clinical studies; harmonize
-  endpoint definitions and timing; pool single-arm placebo/control/treatment
-  benchmarks with base R helpers; summarize comparative effects; create simple
-  forest plots; and translate pooled benchmarks into trial-design assumptions.
-  Triggers on: clinical meta-analysis, pooled rate, literature benchmark,
-  historical control, placebo benchmark, active-control benchmark, forest plot,
-  x/N extraction, mean difference, hazard ratio, incidence rate, endpoint
-  harmonization, benchmark for sample size, benchmark for power.
+  Performs public clinical meta-analysis for drug-development benchmarks by
+  extracting binary x/N, continuous mean/SD/N, time-to-event HR/CI, and
+  incidence-rate events/person-time data; harmonizing endpoint definitions and
+  timing; pooling benchmarks with base R helpers; summarizing comparative
+  effects; creating simple forest plots; and translating pooled estimates into
+  trial-design assumptions. Activates for clinical meta-analysis, pooled rate,
+  literature benchmark, historical control, forest plot, endpoint harmonization,
+  or benchmark-for-power requests.
 ---
 
 # Clinical Meta-Analysis Skill - Public Release

@@ -3,10 +3,10 @@ name: vera-clinical-indirect-comparing
 description: >-
   Performs transparent first-pass clinical indirect treatment comparisons using
   Bucher common-comparator analysis, Bucher chain analysis, MAIC/PAIC, and
-  anchored MAIC for binary and continuous endpoints. Use when no direct
-  head-to-head estimate is available or when a user asks for anchored ITC,
-  Bucher, MAIC, common comparator, HTA sensitivity evidence, or treatment
-  comparison through connected trials.
+  anchored MAIC for binary and continuous endpoints. Activates when direct
+  head-to-head evidence is unavailable or for anchored ITC, Bucher, MAIC,
+  common-comparator, HTA sensitivity evidence, or connected-trial treatment
+  comparison requests.
 ---
 
 # Clinical Indirect Comparison Skill - Public Release

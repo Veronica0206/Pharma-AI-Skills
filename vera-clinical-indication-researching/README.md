@@ -40,7 +40,7 @@ This skill is a public example of how indication research support can be made mo
 | **Step 04 — endpoint framework** | Primary endpoint(s) supported by FDA / EMA guidance, plus key secondary endpoints used by the field. Cites authorities. |
 | **Step 05 — study designs** | Documented study designs from the compound landscape: arm structure, control choice, endpoint, sample size, duration, region. |
 | **Step 06 — synthesis** | First-pass dossier draft: executive summary, MoA section, compound table, endpoint section, design comparison. |
-| **Step 07 — review** | External-reviewer pass (via a reviewer-LLM MCP if configured; otherwise structured self-review). |
+| **Step 07 — review** | External-reviewer pass (via a delegated reviewer if configured; otherwise structured self-review). |
 | **Step 08 — deliver** | Final formatted dossier as Word and / or PDF using the `docx` and `pdf` skills if available. |
 
 The reference search strategies and endpoint authorities are documented in [`reference/specs/search-strategies.md`](reference/specs/search-strategies.md) and [`reference/specs/endpoint-authority-sources.md`](reference/specs/endpoint-authority-sources.md).
@@ -72,7 +72,7 @@ rsync -a Pharma-AI-Skills/vera-clinical-indication-researching/ ~/.claude/skills
 
 **Requirements:**
 - A host agent with current web search/browsing enabled
-- Optional: a reviewer-LLM MCP server for the external-reviewer step; the skill falls back to a structured self-review if none is configured
+- Optional: a delegated reviewer for the external-reviewer step; the skill falls back to a structured self-review if none is configured
 - Optional: document-generation or PDF-export tooling for delivery formatting (skill emits Markdown if unavailable)
 
 See [`docs/guide.md`](docs/guide.md) for a getting-started walkthrough.

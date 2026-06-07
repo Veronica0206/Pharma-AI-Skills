@@ -1,20 +1,14 @@
 ---
 name: vera-master-trial-designing
 description: >-
-  Designs and simulates master protocol clinical trials across three families:
-  basket (one intervention across prespecified subgroups), umbrella (multiple
-  interventions within one protocol population), and platform (arms entering and
-  leaving over time). This public release covers the reference baselines for
-  each family: basket with no borrowing or complete pooling (binary endpoints),
-  umbrella with multi-arm multi-stage (MAMS) design (continuous or binary
-  endpoints), and platform with naive concurrent-control comparison (binary
-  endpoints). Generates per-arm rejection rates, FWER, and 1-minimum power via
-  Monte Carlo simulation. Outputs CSV + PDF. Executes R framework directly.
-  Use when user asks about basket trial, umbrella trial, platform trial, master
-  protocol, MAMS, multi-arm multi-stage, or wants to size and simulate a
-  master-protocol design.
-  Triggers on: basket trial, umbrella trial, platform trial, master protocol,
-  MAMS, multi-arm multi-stage, multi-arm trial, perpetual platform.
+  Designs and simulates public-scope master protocol trials across basket,
+  umbrella, and platform families. Covers basket no-borrowing or complete
+  pooling for binary endpoints, umbrella MAMS designs for continuous or binary
+  endpoints, and platform naive concurrent-control comparison for binary
+  endpoints; generates per-arm rejection rates, FWER, 1-minimum power, CSV
+  outputs, and PDF plots via Monte Carlo simulation. Activates for basket,
+  umbrella, platform, master protocol, MAMS, multi-arm multi-stage, or perpetual
+  platform design requests.
 ---
 
 # Master Protocol Trial Design Skill — Public Release
@@ -136,13 +130,13 @@ User request
 [STEP 5]  Interpret results
 ```
 
-| Step | Document | Input | Output |
-|------|----------|-------|--------|
-| 01 | `workflow/step01-select-design-type.md` | User request | Chosen master design family |
-| 02 | `workflow/step02-build-master-config.md` | Family + parameters | `master_config` object |
-| 03 | `workflow/step03-run-simulation.md` | Config | CSV + PDF outputs |
-| 04 | `workflow/step04-validate-outputs.md` | Output files | Validated artifacts |
-| 05 | `workflow/step05-interpret-results.md` | Validated artifacts | Tables + plots + interpretation |
+| Step | Responsibility | Executor | Document | Input | Output |
+|------|----------------|----------|----------|-------|--------|
+| 01 | Select design type | Main Agent | `workflow/step01-select-design-type.md` | User request | Chosen master design family |
+| 02 | Build master config | Main Agent | `workflow/step02-build-master-config.md` | Family + parameters | `master_config` object |
+| 03 | Run simulation | Main Agent | `workflow/step03-run-simulation.md` | Config | CSV + PDF outputs |
+| 04 | Validate outputs | Main Agent | `workflow/step04-validate-outputs.md` | Output files | Validated artifacts |
+| 05 | Interpret results | Main Agent | `workflow/step05-interpret-results.md` | Validated artifacts | Tables + plots + interpretation |
 
 ---
 

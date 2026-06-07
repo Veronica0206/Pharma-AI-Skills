@@ -60,5 +60,5 @@ Apply the formatting conventions in `dossier-outline.md` (typography, table styl
 - [ ] References section has no duplicates and follows ICMJE format
 
 ## Proceed To
-→ `workflow/step07-review.md` (optional external review via reviewer-LLM MCP; falls back to self-review)
-→ `workflow/step08-deliver.md` (skip step07 if not requested)
+→ `workflow/step07-review-dossier.md` (optional delegated review via delegated reviewer; falls back to self-review)
+→ `workflow/step08-deliver-results.md` (skip step07 if not requested)

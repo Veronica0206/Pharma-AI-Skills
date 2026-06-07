@@ -70,4 +70,4 @@ Do not over-ask if the request is clear.
 - All parameters have explicit values (user-provided or default)
 
 ## Next Step
-Step 02: MoA Landscape Research (workflow/step02-moa-research.md)
+Step 02: MoA Landscape Research (workflow/step02-research-moa.md)
