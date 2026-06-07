@@ -280,7 +280,7 @@ efficacy number with specific trial name and year.
 
 | Option | Values | Default |
 |--------|--------|---------|
-| Output format | docx, pdf | docx |
+| Output format | docx, pdf, md | docx if export tooling is available; otherwise md |
 | Depth | standard, deep | deep |
 | Focus MoA/compound | any class or drug name | none |
 | Population | adult, pediatric, both | adult |
