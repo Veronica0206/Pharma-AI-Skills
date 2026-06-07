@@ -16,7 +16,7 @@ is well-defined and the agent has unambiguous instructions for Steps 02-06.
 
 | Parameter | Question | Default |
 |-----------|----------|---------|
-| Indication | Exact disease name or subtype? (e.g., "IgA nephropathy", "primary FSGS") | *required — no default* |
+| Indication | Exact disease name or subtype? (e.g., "Example Renal Indication A", "Example Renal Indication B") | *required — no default* |
 
 ### 1.2 Optional Parameters
 
@@ -45,7 +45,7 @@ This prevents completing all research steps only to discover at assembly time th
 - If the user specifies a focus compound, ensure you understand both the compound name AND its MoA
   class — ask if unclear, as this affects Step 02 (MoA deep-dive) and Step 06 (differentiation).
 - If the indication name is ambiguous (e.g., "kidney disease"), ask for the specific subtype.
-  Provide examples: "Do you mean IgA nephropathy, FSGS, membranous nephropathy, or another?"
+  Provide examples: "Do you mean Example Renal Indication A, Example Renal Indication B, Example Renal Indication C, or another?"
 - If the user asks for "quick" or "overview", set Depth = Standard.
 
 ### 1.4 Confirmation

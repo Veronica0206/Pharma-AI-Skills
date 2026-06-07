@@ -31,7 +31,7 @@ indication_dossier_[indication_slug]_[YYYY-MM-DD].[ext]
 ```
 
 Where:
-- `[indication_slug]` is the disease name in lowercase with hyphens (e.g., `iga-nephropathy`, `anca-vasculitis`)
+- `[indication_slug]` is the disease name in lowercase with hyphens (e.g., `example-renal-indication-a`, `example-immune-indication`)
 - `[YYYY-MM-DD]` is today's date
 - `[ext]` is `docx`, `pdf`, or `md`
 

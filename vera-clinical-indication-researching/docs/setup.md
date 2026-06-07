@@ -44,7 +44,7 @@ Use a narrow request first:
 
 ```text
 Use vera-clinical-indication-researching to create a concise indication dossier
-for IgA nephropathy, with Markdown output.
+for Example Renal Indication A, with Markdown output.
 ```
 
 Expected behavior:

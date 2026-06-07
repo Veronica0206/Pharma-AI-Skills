@@ -14,7 +14,7 @@ Output: a publication-quality dossier (`.docx`, `.pdf`, or `.md`) with full cita
 
 ## Quick Start
 
-> "Run an indication dossier on IgA nephropathy"
+> "Run an indication dossier on Example Renal Indication A"
 
 The skill will:
 1. Confirm scope (default depth, focus compound, output format)
@@ -26,10 +26,10 @@ The skill will:
 
 | User Request | Behavior |
 |---|---|
-| "Quick overview of FSGS" | Standard depth (3-5 searches per section), markdown output |
-| "Deep dossier on ANCA vasculitis with focus on rituximab biosimilars" | Deep depth (6-10 searches per section), focus compound MoA deep-dive |
-| "What endpoints does FDA accept for membranous nephropathy?" | Step 04 only — endpoint framework with HA-Guided/Community Consensus/Literature Emerging classification |
-| "Compare Phase 3 IgAN designs across approved sponsors" | Step 05 only — regulatory precedent table |
+| "Quick overview of Example Renal Indication B" | Standard depth (3-5 searches per section), markdown output |
+| "Deep dossier on Example Immune-Mediated Indication with focus on [example drug class]" | Deep depth (6-10 searches per section), focus compound MoA deep-dive |
+| "What endpoints does FDA accept for Example Renal Indication C?" | Step 04 only — endpoint framework with HA-Guided/Community Consensus/Literature Emerging classification |
+| "Compare Phase 3 [example abbreviation] designs across approved sponsors" | Step 05 only — regulatory precedent table |
 
 ## Output Structure
 
@@ -73,6 +73,6 @@ Domain `clinical` is a custom domain (not in the official `dev/doc/content/data/
 
 ## Limitations
 
-- **Therapeutic area coverage**: `endpoint-authority-sources.md` currently has the strongest coverage for nephrology and ANCA vasculitis. Other indications follow the same classification system but may need extending the reference file (see "Extending This Reference" section in that file).
+- **Therapeutic area coverage**: `endpoint-authority-sources.md` currently has the strongest coverage for renal and immune-mediated example areas. Other indications follow the same classification system but may need extending the reference file (see "Extending This Reference" section in that file).
 - **No automated fact-checking**: External review (step07) is the safety net but is optional.
 - **Output format depends on document/PDF tooling**: Verified upfront in step01 — falls back to markdown if formatted export is unavailable.

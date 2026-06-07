@@ -144,10 +144,10 @@ mcp__codex__codex-reply:
 
     Since your last review, we have:
     1. [Action 1]: [result — e.g., "Reclassified eGFR slope from Community Consensus to
-       HA-Guided based on FDA Draft Guidance 'IgA Nephropathy: Developing Drugs' (2023)"]
-    2. [Action 2]: [result — e.g., "Updated SoC benchmark from sparsentan 49.8% to
-       ixazomib 40.2% (more conservative, most recent Phase 3)"]
-    3. [Action 3]: [result — e.g., "Added PROTECT trial (NCT03762850) to compound landscape
+       HA-Guided based on relevant FDA draft guidance"]
+    2. [Action 2]: [result — e.g., "Updated SoC benchmark from [example drug A] 49.8% to
+       [example drug B] 40.2% (more conservative, most recent Phase 3)"]
+    3. [Action 3]: [result — e.g., "Added [example Phase 3 trial] to compound landscape
        — previously missing Phase 3 program"]
 
     Updated dossier sections:

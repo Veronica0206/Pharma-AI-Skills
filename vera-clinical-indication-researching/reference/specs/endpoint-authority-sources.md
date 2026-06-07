@@ -8,16 +8,16 @@
 ## Disease-Specific Sources
 
 Kidney Disease (Nephrology):
-- KDIGO: https://kdigo.org/guidelines/ (IgAN 2021, GN, CKD, Transplant)
+- Guideline source: https://kdigo.org/guidelines/ (renal guideline examples)
 - ERA: https://www.era-online.org/
 - ASN: https://www.asn-online.org/
-- PARASOL Initiative (FSGS surrogate endpoint development)
+- Surrogate endpoint development initiative
 
-Rheumatology / Vasculitis:
+Immune-Mediated Disease Area:
 - ACR: https://www.rheumatology.org/
 - EULAR: https://www.eular.org/
-- BVAS (Birmingham Vasculitis Activity Score) — validated composite for ANCA vasculitis
-- VDI (Vasculitis Damage Index)
+- Validated disease activity score — composite example
+- Validated damage index example
 
 General:
 - COMET Initiative: https://www.comet-initiative.org/
@@ -45,45 +45,43 @@ specific source in your dossier tables — never present these as uncited facts.
 
 ---
 
-IgA Nephropathy:
+Example Renal Indication A:
 - UPCR response: >= 40% reduction from baseline (spot urine)
-  *Source: TESTING (NCT04578834) primary endpoint definition; also used in NefIgArd (NCT03643965).
-  Note: some programs use >= 30% (e.g., PROTECT, NCT03762850). Confirm current FDA preference via
+  *Source: [example pivotal trial] primary endpoint definition; also used in [supportive trial].
+  Note: some programs use >= 30% (e.g., [example Phase 3 trial]). Confirm current FDA preference via
   guidance or pre-IND meeting feedback.*
 - Complete remission: UPCR < 0.3 g/g
-  *Source: IgAN working group convention; threshold aligns with KDIGO 2021 GN guideline Chapter 3.*
+  *Source: example working-group convention; threshold aligns with a relevant renal guideline chapter.*
 - eGFR slope: annual change (mL/min/1.73m^2/year)
-  *Source: FDA Draft Guidance "IgA Nephropathy: Developing Drugs for Treatment" (2023). FDA has
+  *Source: relevant indication-specific FDA draft guidance. FDA has
   accepted eGFR slope as a reasonably likely surrogate for accelerated approval.*
 
-FSGS:
+Example Renal Indication B:
 - Partial remission: UPCR < 1.5 g/g with >= 50% reduction
-  *Source: Commonly used in FSGS trials (e.g., DUET, NCT02235857). PARASOL initiative is working
+  *Source: Commonly used in Example Renal Indication B trials (e.g., [example trial], [NCT placeholder]). a surrogate endpoint initiative is working
   toward formal surrogate endpoint validation; thresholds may change.*
 - Complete remission: UPCR < 0.3 g/g
-  *Source: KDIGO 2021 GN guideline. Same threshold as general nephrotic syndrome remission.*
+  *Source: a relevant renal guideline. Same threshold as a related remission definition.*
 
-ANCA Vasculitis:
+Example Immune-Mediated Indication:
 - Complete remission: BVAS = 0 at 6 months + no prednisone (or <= 7.5 mg/day in some protocols)
-  *Source: RAVE (NCT00104299) and RITUXVAS definitions. Prednisone threshold varies by trial.*
+  *Source: [example remission trials]. Prednisone threshold varies by trial.*
 - Sustained remission: BVAS = 0 maintained through end of study
-  *Source: FDA has accepted sustained remission at 12-18 months as primary endpoint (e.g., ADVOCATE,
-  NCT02994927 used BVAS remission at 26 and 52 weeks).*
+  *Source: FDA has accepted sustained remission at protocol-specified follow-up as a primary endpoint in example pivotal programs.*
 
-Lupus Nephritis:
+Example Renal Inflammatory Indication:
 - Complete renal response (CRR): UPCR <= 0.5 g/g + eGFR >= 90% of screening (or no decrease >10%)
-  *Source: AURORA (NCT03021499) and BLISS-LN (NCT01639339) primary endpoint definitions. FDA 2024
-  Draft Guidance "Lupus Nephritis: Developing Drugs for Treatment" endorses CRR.*
+  *Source: [example pivotal trials] primary endpoint definitions. Relevant draft guidance endorses CRR.*
 - Partial renal response: >= 50% UPCR reduction + UPCR <= 3 g/g + eGFR >= 90% baseline
-  *Source: ACR/EULAR consensus; used as secondary endpoint in AURORA and BLISS-LN.*
+  *Source: ACR/EULAR consensus; used as secondary endpoint in [example pivotal trials].*
 
 ---
 
 ### Extending This Reference
 
-For indications not listed above (oncology, cardiovascular, CNS, infectious disease, etc.):
+For indications not listed above, extend this file by therapeutic area:
 1. Search FDA guidance documents: site:fda.gov guidance "[indication]" endpoint
 2. Search EMA scientific guidelines: site:ema.europa.eu "[indication]" guideline endpoint
 3. Identify pivotal trials via ClinicalTrials.gov and extract primary endpoint definitions
-4. Search for disease-specific working group consensus (e.g., RECIST for oncology, NYHA for heart failure)
+4. Search for disease-specific working group consensus or validated response criteria
 5. Add entries to this file following the format above, always with source citations

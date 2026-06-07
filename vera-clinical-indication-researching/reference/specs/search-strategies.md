@@ -27,10 +27,10 @@ or severity scoring conventions that downstream sections will need to respect.
 "[indication]" "burden of disease" OR "unmet need" review [Y-3] OR [Y-2] OR [Y-1] OR [Y]
 site:pubmed.ncbi.nlm.nih.gov "[indication]" review epidemiology [Y-3] OR [Y-2] OR [Y-1] OR [Y]
 
-If the indication is rare or has multiple naming conventions (e.g., "AAV" vs. "ANCA-associated vasculitis"),
+If the indication is rare or has multiple naming conventions (e.g., "alternate abbreviation" vs. "Example Immune-Mediated Indication"),
 record both forms and use whichever returns more results in subsequent sections. If the indication has
 distinct severity strata that drive different trial designs (e.g., "mild-to-moderate" vs. "severe"
-ulcerative colitis), record those strata explicitly — Sections 4 and 5 will need them.
+example inflammatory condition), record those strata explicitly — Sections 4 and 5 will need them.
 
 ## Section 2: MoA Landscape
 "[indication] pathophysiology therapeutic targets review"
@@ -58,7 +58,7 @@ site:fda.gov guidance "[indication]" endpoint
 "[indication]" trial "alpha" "power" "sample size"
 
 ## Tips
-- Combine synonyms: "IgA nephropathy" OR "IgAN" OR "Berger disease"
+- Combine synonyms: "Example Renal Indication A" OR "[example abbreviation]" OR "alternate disease name"
 - Year filter: always use rolling window [Y-3] OR [Y-2] OR [Y-1] OR [Y]
 - Nephrology sources: JASN, AJKD, Kidney International, CJASN, NDT, ASN Kidney Week abstracts
 - Transplant sources: American Journal of Transplantation, Banff classification updates

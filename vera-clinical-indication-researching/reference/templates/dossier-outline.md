@@ -55,7 +55,7 @@ References
 - Alternating row shading: light gray (#F2F2F2) on even rows
 - Borders: thin (0.5pt) gray (#D9D9D9) horizontal lines; no vertical borders
 - Column widths: auto-fit to content; first column (label) no wider than 25% of table width
-- Table caption: bold, above table, numbered by section (e.g., "Table 2.1: MoA Classes in IgA Nephropathy")
+- Table caption: bold, above table, numbered by section (e.g., "Table 2.1: MoA Classes in Example Renal Indication A")
 
 **Cover page:**
 - Title: Calibri 20pt bold

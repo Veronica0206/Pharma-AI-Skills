@@ -150,7 +150,7 @@ User request
 
 | Family | Question | Public-scope method |
 |---|---|---|
-| **Basket** | One drug, several subgroups (e.g., one TKI across multiple tumor types) — does it work in each? | No borrowing (independent Beta-Binomial test per subgroup) OR complete pooling (single Beta-Binomial across all subgroups) |
+| **Basket** | One drug, several subgroups (e.g., one targeted intervention across multiple prespecified subgroups) — does it work in each? | No borrowing (independent Beta-Binomial test per subgroup) OR complete pooling (single Beta-Binomial across all subgroups) |
 | **Umbrella** | One disease, several drugs — which arms graduate? | MAMS with stage-wise futility (and optionally efficacy) boundaries |
 | **Platform** | A perpetual protocol — arms enter and leave over time, control evolves | Naïve concurrent-control comparison: each arm tested using only the control patients enrolled during the arm's active periods |
 
